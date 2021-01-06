@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buger Menu</title>
+</head>
+<body>
+    
+    <style>
+        .burger-btn {
+            height: 30px;
+            width: 40px;
+            background: rgb(68, 68, 68);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 6px;
+            cursor: pointer;   
+        }
+        
+        .burger-btn span {
+            transition: all .3s ease;
+            background-color: #fff;
+            height: 4px;
+            border-radius: 5px;
+        }
+
+
+        .burger-btn:hover span {
+            background-color: rgb(202, 202, 202);
+            border-radius: 5px;
+            /* margin: 0 auto;  */
+        }
+
+        .burger-btn:hover span:nth-child(1) {
+            transform: rotate(39deg) translate(6px, 11px);
+            /* width: 85%; */
+        }
+
+        .burger-btn:hover span:nth-child(2) {
+            transform: rotate(136deg);
+            display: none;
+            /* width: 100%; */
+        }
+
+        .burger-btn:hover span:nth-child(3) {
+            transform: rotate(136deg) translate(-8px, 11px);
+            /* width: 85%; */
+        }
+
+        
+    </style>
+
+    <div class="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+@import './variables'; 
+
+.header-area {
+    background-color: #fff;
+    border-bottom: 1px solid lightgrey;
+    padding: 1rem 0;
+    position: relative;
+
+    .header-area-inner {
+        @include flex_center;
+
+
+        .navbar-area {
+            @include flex_center;
+
+            .nav-toggle-btn {
+                margin-left: 1rem;
+                cursor: pointer;
+
+                i {
+                    background-color: $theme_color;
+                    font-size: 1.7rem;
+                    padding: 4px 7px;
+                    color: white;
+                    border-radius: 50%;
+                }
+
+                .menu-close-btn {
+                    display: none;
+                }
+                .menu-close-btn-show {
+                    display: block;
+                    background-color: white;
+                    color: $theme_color;
+                }
+
+                .menu-burger-btn {
+                    display: block;
+                }
+                .menu-burger-btn-hide {
+                    display: none;
+                }
+            }
+
+            
+
+            input {
+                height: 40px;
+                width: 300px;
+                background: #e6eff4 !important;
+                border: none;
+                outline: none;
+                font-size: 12px;
+                color: #4559ce;
+                font-family: "Poppins",sans-serif;
+                font-weight: 400;
+                padding: 0 15px;
+                line-height: 40px;
+                appearance: none;
+            }
+        }
+    }
+
+
+    // Menu
+    .mega-menu {
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        width: 100%;
+        padding-bottom: 6rem;
+        // height: 80vh;
+        background-color: $theme_color;
+        z-index: 11;
+
+        .menu-inner {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr; 
+            grid-gap: 2rem;
+        }
+
+        .topic, .disorder, .solutions {
+            .title {
+                display: block;
+                border-bottom: 1px solid #fff;
+                padding-bottom: 1rem;
+                color: white;
+                font-size: 1.4rem;
+            }
+
+            .navigation {
+                display: flex;
+                gap: 3rem;
+                
+                ul {
+                    width: 100%;
+                    li {
+                        position: relative;
+                        padding: 10px 0;
+                        display: flex;
+                        justify-content: space-between;
+                        color: white;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $black_color;
+                        }
+
+                        i {
+                            padding: 1px 8px;
+                        }
+                    }
+
+                    .has-child-menu {
+                        width: 100%;
+                        position: absolute;
+                        background-color: #3b4eb9;
+                        color: black;
+                        z-index: 111;
+                        top: 31px;
+                        right: -8px;
+                        border: 1px solid #6c7bd0;
+                        padding: 10px;
+                        display: none;
+                    }
+
+                    .has-child-menu-show {
+                        display: block;
+                    }
+                }
+            }
+        }
+        display: none;
+    }
+
+    .mega-menu-show {
+        display: block;
+    }
+}
+.with-menu {
+    background-color: $theme_color;
+    color: white !important;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .header-area {
+        input {
+            display: none;
+        }
+
+
+        .mega-menu { 
+            height: 92vh;
+            overflow-y: scroll;
+            .menu-inner {
+                display: block;
+            }
+        }
+    }
+}
+
+
+@media (max-width:950px) {
+    .header-area {
+        .mega-menu {
+            top: 4rem;
+        }
+        .menu-inner {
+            .topic, .disorder, .solutions {
+                margin-top: 2rem;
+                padding: 0 1rem;
+                .navigation {
+                    display: block;
+                }
+            }
+        }
+    }
+}

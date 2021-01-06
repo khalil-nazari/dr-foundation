@@ -1,0 +1,49 @@
+/*
+*    By : Khalil Nazari 
+*    Date : 24 Dec 2020
+*/
+
+
+// Colors 
+$theme_color: #4559ce; 
+$theme_color_secondary:#b5bdeb;
+$theme_color_muted: #dadef5;
+$black_color: #070707;
+$theme_color_light: #e6eff4;
+$card_border: #ececec;
+
+
+$primary_container: 1182px; 
+$artible_max_container: 1140px; 
+$artible_min_container: 960px; 
+
+
+
+@mixin flex_center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+// Mixins 
+@mixin grid_12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+
+@mixin grid_2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(770px, 1fr)); 
+}
+
+@mixin grid_5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(213px, 1fr)); 
+}
+
+@mixin latest_article {
+    display:grid; 
+    grid-template-columns: 1fr 326px;
+}
